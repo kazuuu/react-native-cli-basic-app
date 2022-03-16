@@ -5,6 +5,7 @@ import {
   Text,
   View,
 } from 'react-native';
+import Card from './Card';
 
 const App = () => {
   const msg = 'Estou aqui';
@@ -15,20 +16,21 @@ const App = () => {
       <Text>Hybrid Mobile App</Text>
       <StatusBar style='auto' />
       
-      <View style={styles.card}>
+      <Card>
         <Text>Este é o primeiro card</Text>
-      </View>
-      <View style={[styles.card, { backgroundColor: '#ee125a', }]}>
-        <Text>Este é o segundo card</Text>
-      </View>
-      <View style={[styles.card, { backgroundColor: '#91A2AD', }]}>
-        <Text>Este é o terceiro card</Text>
-      </View>
+        <Text>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</Text>
+      </Card>
+      <Card backgroundColor='#ee125a'>
+        <Text>Este é o primeiro card</Text>
+        <Text>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</Text>
+      </Card>
+      <Card backgroundColor='black' textColor='#ee125a'>
+        <Text>Este é o primeiro card</Text>
+        <Text>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</Text>
+      </Card>
     </View>
   );
 };
-
-export default App;
 
 const styles = StyleSheet.create({
   container: {
@@ -38,11 +40,6 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     padding: 16,
   },
-  card: {
-    width: '100%',
-    backgroundColor: '#ccc',
-    padding: 16,
-    borderRadius: 10,
-    marginBottom: 8,
-  },
 });
+
+export default App;
