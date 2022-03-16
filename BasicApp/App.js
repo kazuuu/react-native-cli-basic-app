@@ -8,24 +8,29 @@ import {
 
 // *********************
 // Class Component
-// *********************
-// class App extends Component {
-//   render() {
-//     return (
-//       <View style={styles.container}>
-//         <Text>Hybrid Mobile App</Text>
-//         <StatusBar style="auto" />
-//       </View>
-//     );
-//   }
-// }
-// export default App;
+// *********************  
+class App extends Component {
+  render() {
+    const msg = 'Estou aqui';
+    console.log('Class Component', msg);
+
+    return (
+      <View style={styles.container}>
+        <Text>Hybrid Mobile App</Text>
+        <StatusBar style="auto" />
+      </View>
+    );
+  }
+}
+export default App;
 
 
 // *********************
 // Function Component
 // *********************
 // export default function App() {
+// const msg = 'Estou aqui';
+// console.log('Function Component', msg);
 //   return (
 //     <View style={styles.container}>
 //       <Text>Hybrid Mobile App</Text>
@@ -38,16 +43,17 @@ import {
 // *********************
 // Arrow Function Component
 // *********************
-const App = () => {
-  return (
-    <View style={styles.container}>
-      <Text>Hybrid Mobile App</Text>
-      <StatusBar style="auto" />
-    </View>
-  );
-};
-
-export default App;
+// const App = () => {
+// const msg = 'Estou aqui';
+// console.log('Arrow Function Component', msg);
+//   return (
+//     <View style={styles.container}>
+//       <Text>Hybrid Mobile App</Text>
+//       <StatusBar style="auto" />
+//     </View>
+//   );
+// };
+// export default App;
 
 const styles = StyleSheet.create({
   container: {
