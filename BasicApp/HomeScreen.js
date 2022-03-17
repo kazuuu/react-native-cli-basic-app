@@ -11,7 +11,7 @@ import CustomButton from './CustomButton';
 import CustomButton2 from './CustomButton2';
 import CustomTextInput from './CustomTextInput';
 
-const HomeScreen = ({ navigation }) => {
+const HomeScreen = ({ navigation, route }) => {
   const [text, setText] = useState('');
 
   const handleClick = () => {
@@ -21,7 +21,10 @@ const HomeScreen = ({ navigation }) => {
   return (
     <View style={styles.container}>
       <StatusBar style='auto' />
-      <Text>Hybrid Mobile App</Text>
+      <Text style={{fontSize: 24}}>
+        Seja bem vindo,&nbsp;
+        <Text style={{fontWeight: 'bold'}}>{route.params.username}</Text>
+      </Text>
       <View style={{height: 16}}></View>
 
       <CustomTextInput onChangeText={ value => setText(value)} />
@@ -30,7 +33,7 @@ const HomeScreen = ({ navigation }) => {
       <CustomButton title="Adicionar"  onPress={handleClick} />
       <View style={{height: 16}}></View>
 
-      <CustomButton2 title="Cancelar" onPress={handleClick} />
+      <CustomButton2 title="Cancelar" onPress={() => navigation.goBack(null)} />
       <View style={{height: 16}}></View>
 
       <Card>
