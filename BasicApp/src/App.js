@@ -1,9 +1,12 @@
-import React from 'react';
-import LoginScreen from  './screens/LoginScreen'
+import React from 'react'
+import { NavigationContainer } from '@react-navigation/native'
+import { MainStackNavigator } from './navigation/StackNavigators'
 
-const App = () => {
+const App = () => { 
   return (
-    <LoginScreen />
+    <NavigationContainer>
+      <MainStackNavigator />
+    </NavigationContainer>
   );
 };
 

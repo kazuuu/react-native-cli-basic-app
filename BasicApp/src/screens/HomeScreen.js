@@ -3,12 +3,14 @@ import {
   StyleSheet,
   Text,
   View,
+  Button,
 } from 'react-native';
 
 const HomeScreen = ({ navigation }) => {
   return (
     <View style={styles.container}>
       <Text>Home Screen</Text>
+      <Button title='Voltar' onPress={() => navigation.goBack(null)} />
     </View>
   );
 };
