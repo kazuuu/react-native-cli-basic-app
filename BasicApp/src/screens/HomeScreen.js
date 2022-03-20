@@ -6,12 +6,13 @@ import {
   Text,
   View,
 } from 'react-native';
-import Card from './Card';
-import CustomButton from './CustomButton';
-import CustomButton2 from './CustomButton2';
-import CustomTextInput from './CustomTextInput';
 
-const HomeScreen = ({ navigation, route }) => {
+import CustomButton from '../components/CustomButton';
+import CustomButton2 from '../components/CustomButton2';
+import CustomTextInput from '../components/CustomTextInput';
+import Card from '../components/Card';
+
+const HomeScreen = ({ navigation }) => {
   const [text, setText] = useState('');
 
   const handleClick = () => {
@@ -23,7 +24,7 @@ const HomeScreen = ({ navigation, route }) => {
       <StatusBar style='auto' />
       <Text style={{fontSize: 24}}>
         Seja bem vindo,&nbsp;
-        <Text style={{fontWeight: 'bold'}}>{route.params.username}</Text>
+        <Text style={{fontWeight: 'bold'}}></Text>
       </Text>
       <View style={{height: 16}}></View>
 
@@ -33,7 +34,10 @@ const HomeScreen = ({ navigation, route }) => {
       <CustomButton title="Adicionar"  onPress={handleClick} />
       <View style={{height: 16}}></View>
 
-      <CustomButton2 title="Cancelar" onPress={() => navigation.goBack(null)} />
+      <CustomButton2 title="IR" onPress={() => navigation.navigate('One', { username: 'Marcello' })} />
+      <View style={{height: 16}}></View>
+
+      <CustomButton2 title="SAIR" onPress={() => navigation.navigate('Login')} />
       <View style={{height: 16}}></View>
 
       <Card>

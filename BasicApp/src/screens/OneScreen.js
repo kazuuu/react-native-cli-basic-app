@@ -1,17 +1,16 @@
 import React from 'react';
 import {
-  StatusBar,
   StyleSheet,
   Text,
   View,
 } from 'react-native';
-import CustomButton from './CustomButton';
+import CustomButton from '../components/CustomButton';
 
-const LoginScreen = ({ navigation }) => {
+const OneScreen = ({ navigation }) => {
   return (
     <View style={styles.container}>
-        <Text>Login</Text>
-        <CustomButton title="Entrar"  onPress={() => navigation.navigate('Home', { username: 'Marcello' })} />
+        <Text>One Screen</Text>
+        <CustomButton title="Voltar"  onPress={() => navigation.goBack(null)} />
     </View>
   );
 };
@@ -26,4 +25,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default LoginScreen;
+export default OneScreen;
