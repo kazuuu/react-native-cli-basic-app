@@ -4,6 +4,7 @@ import OneScreen from '../screens/OneScreen';
 import LoginScreen from '../screens/LoginScreen';
 import HomeScreen from '../screens/HomeScreen';
 import AccountScreen from '../screens/AccountScreen';
+import MessageScreen from '../screens/MessageScreen';
 import HomeBottomTabsNavigator from './HomeBottomTabsNavigation';
 
 const Stack = createNativeStackNavigator();
@@ -28,6 +29,17 @@ export const HomeStackNavigator = () => {
     return (
         <Stack.Navigator initialRouteName="Home">
             <Stack.Screen name="Home" component={HomeScreen} />
+            <Stack.Screen name="One" component={OneScreen} />
+        </Stack.Navigator>
+    )
+}
+
+export const MessageStackNavigator = () => {
+    const Stack = createNativeStackNavigator();
+
+    return (
+        <Stack.Navigator initialRouteName="Message">
+            <Stack.Screen name="Message" component={MessageScreen} />
             <Stack.Screen name="One" component={OneScreen} />
         </Stack.Navigator>
     )

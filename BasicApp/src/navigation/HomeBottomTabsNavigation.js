@@ -1,8 +1,8 @@
 import React from 'react';
 import { Text} from 'react-native';
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
-import { HomeStackNavigator, AccountStackNavigator } from './StackNavigation';
-import Icon from 'react-native-vector-icons/MaterialCommunityIcons'
+import { HomeStackNavigator, MessageStackNavigator, AccountStackNavigator } from './StackNavigation';
+import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons'
 
 export default () => {
     const BottomTab = createBottomTabNavigator();
@@ -24,15 +24,15 @@ export default () => {
                 options={{
                     tabBarIcon: ({ focused }) => (
                         <>
-                            <Icon
+                            <MaterialCommunityIcons
                                 name='home'
                                 size={20}
-                                color={focused ? '#0a9396' : '#d62828'}
+                                color={focused ? '#ee125a' : '#91A2AD'}
                             />
                             <Text
                                 allowFontScaling={false}
                                 style={{
-                                    color: focused ? '#0a9396' : '#d62828',
+                                    color: focused ? '#ee125a' : '#91A2AD',
                                     width: 50,
                                     fontSize: 11,
                                     textAlign: 'center'
@@ -44,20 +44,45 @@ export default () => {
                 }}            
             />
             <BottomTab.Screen
+                name="MessageTab"
+                component={MessageStackNavigator} 
+                options={{
+                    tabBarIcon: ({ focused }) => (
+                        <>
+                            <MaterialCommunityIcons
+                                name='message'
+                                size={20}
+                                color={focused ? '#ee125a' : '#91A2AD'}
+                            />
+                            <Text
+                                allowFontScaling={false}
+                                style={{
+                                    color: focused ? '#ee125a' : '#91A2AD',
+                                    width: 50,
+                                    fontSize: 11,
+                                    textAlign: 'center'
+                                }}>
+                                Message
+                            </Text>
+                        </>
+                    )
+                }}
+            />
+            <BottomTab.Screen
                 name="AccountTab"
                 component={AccountStackNavigator} 
                 options={{
                     tabBarIcon: ({ focused }) => (
                         <>
-                            <Icon
+                            <MaterialCommunityIcons
                                 name='account'
                                 size={20}
-                                color={focused ? '#0a9396' : '#d62828'}
+                                color={focused ? '#ee125a' : '#91A2AD'}
                             />
                             <Text
                                 allowFontScaling={false}
                                 style={{
-                                    color: focused ? '#0a9396' : '#d62828',
+                                    color: focused ? '#ee125a' : '#91A2AD',
                                     width: 50,
                                     fontSize: 11,
                                     textAlign: 'center'
