@@ -6,10 +6,11 @@ import {
   Button,
 } from 'react-native';
 
-const HomeScreen = ({ navigation }) => {
+const HomeScreen = ({ navigation, route }) => {
   return (
     <View style={styles.container}>
       <Text>Home Screen</Text>
+      <Text>Seja bem vindo, {route.params.username}</Text>
       <Button title='Voltar' onPress={() => navigation.goBack(null)} />
     </View>
   );
