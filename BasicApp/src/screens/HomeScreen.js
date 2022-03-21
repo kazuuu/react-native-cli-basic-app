@@ -11,7 +11,7 @@ const HomeScreen = ({ navigation, route }) => {
     <View style={styles.container}>
       <Text>Home Screen</Text>
       <Text>Seja bem vindo, {route.params.username}</Text>
-      <Button title='Voltar' onPress={() => navigation.goBack(null)} />
+      <Button title='Sair' onPress={() => navigation.replace('Login')} />
     </View>
   );
 };
