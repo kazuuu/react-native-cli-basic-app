@@ -3,19 +3,18 @@ import {
   StyleSheet,
   Text,
   View,
+  ImageBackground,
+  Image,
   Button,
-  TextInput,
   Alert,
   Pressable,
 } from 'react-native';
 
 const HomeScreen = ({ navigation, route }) => {
-  const [textInputComprar, setTextInputComprar] = useState('');
-
   const handleAlert = () => {
     Alert.alert(
       "Sucesso",
-      textInputComprar,
+      "Simples Alert.",
       [
         { text: "OK", onPress: () => console.log("OK Pressed") }
       ]
@@ -24,21 +23,23 @@ const HomeScreen = ({ navigation, route }) => {
 
   return (
     <View style={styles.container}>
-      <Text>Home Screen</Text>
-      <View style={{ height: 8 }} />
-      <Text>Seja bem vindo, {route.params.username}</Text>
-      <View style={{ height: 8 }} />
-      <Button title='Voltar' onPress={() => navigation.goBack(null)} />
-      <View style={{ height: 8 }} />
-      <TextInput 
-        placeholder='O que deseja comprar?' 
-        value={textInputComprar}
-        onChangeText={(value) => setTextInputComprar(value)} style={styles.textInput} 
-      />
-      <View style={{ height: 8 }} />
-      <Pressable style={styles.button} onPress={handleAlert}>
-        <Text style={styles.buttonText}>Alert</Text>
-      </Pressable>
+      <ImageBackground source={require('../../assets/app_bg.png')} style={styles.imageBackground}> 
+        <Image
+          style={styles.imageTrophy}
+          source={require('../../assets/app_trophy.png')}
+        />      
+        <Text style={[styles.text, styles.textTitle]}>Home Screen</Text>
+        <Text style={styles.text}>Seja bem vindo, {route.params.username}</Text>
+        <Button title='Voltar' onPress={() => navigation.goBack(null)} />
+
+        <Pressable style={styles.button} onPress={handleAlert}>
+          <Text style={styles.buttonText}>Alert</Text>
+        </Pressable>
+
+        <Pressable style={styles.button} onPress={handleAlert}>
+          <Text style={styles.buttonText}>TextInput e States</Text>
+        </Pressable>
+      </ImageBackground>
     </View>
   );
 };
@@ -48,9 +49,26 @@ export default HomeScreen;
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    alignItems: 'center',
+  },
+  imageBackground: {
+    flex: 1,
+    resizeMode: 'conver',
     justifyContent: 'center',
+    alignItems: 'center',
     padding: 16,
+  },
+  imageTrophy: {
+    width: 90,
+    margin: 16,
+    resizeMode: 'contain',
+  },
+  text: {
+    fontSize: 18,
+    color: 'white',
+  },
+  textTitle: {
+    fontSize: 26,
+    fontWeight: 'bold',
   },
   textInput: {
     width: '100%',
@@ -69,6 +87,8 @@ const styles = StyleSheet.create({
     borderRadius: 20,
     elevation: 3,
     backgroundColor: '#ee125a',
+    marginTop: 8,
+    width: '100%',
   },
   buttonText: {
     color: 'white',
