@@ -30,7 +30,7 @@ const HomeScreen = ({ navigation, route }) => {
         />      
         <Text style={[styles.text, styles.textTitle]}>Home Screen</Text>
         <Text style={styles.text}>Seja bem vindo, {route.params.username}</Text>
-        <Button title='Voltar' onPress={() => navigation.goBack(null)} />
+        <Button title='Sair' onPress={() => navigation.replace('Login')} />
 
         <Pressable style={styles.button} onPress={handleAlert}>
           <Text style={styles.buttonText}>Alert</Text>
