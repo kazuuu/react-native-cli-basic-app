@@ -10,18 +10,13 @@ import {
 } from 'react-native';
 
 const HomeScreen = ({ navigation, route }) => {
-  const [item, setItem] = useState('');
+  const [textInputComprar, setTextInputComprar] = useState('');
 
-  const handleSuccessAlert = () => {
+  const handleAlert = () => {
     Alert.alert(
       "Sucesso",
-      item,
+      textInputComprar,
       [
-        {
-          text: "Cancel",
-          onPress: () => console.log("Cancel Pressed"),
-          style: "cancel"
-        },
         { text: "OK", onPress: () => console.log("OK Pressed") }
       ]
     );
@@ -37,10 +32,11 @@ const HomeScreen = ({ navigation, route }) => {
       <View style={{ height: 8 }} />
       <TextInput 
         placeholder='O que deseja comprar?' 
-        onChangeText={(value) => setItem(value)} style={styles.textInput} 
+        value={textInputComprar}
+        onChangeText={(value) => setTextInputComprar(value)} style={styles.textInput} 
       />
       <View style={{ height: 8 }} />
-      <Pressable style={styles.button} onPress={handleSuccessAlert}>
+      <Pressable style={styles.button} onPress={handleAlert}>
         <Text style={styles.buttonText}>Alert</Text>
       </Pressable>
     </View>
