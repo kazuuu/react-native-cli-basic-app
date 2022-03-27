@@ -22,8 +22,8 @@ const HomeScreen = ({ navigation, route }) => {
   }
 
   return (
-    <View style={styles.container}>
-      <ImageBackground source={require('../../assets/app_bg.png')} style={styles.imageBackground}> 
+    <ImageBackground source={require('../../assets/app_bg.png')} style={styles.imageBackground}> 
+      <View style={styles.container}>
         <Image
           style={styles.imageTrophy}
           source={require('../../assets/app_trophy.png')}
@@ -39,26 +39,27 @@ const HomeScreen = ({ navigation, route }) => {
         <Pressable style={styles.button} onPress={() => navigation.navigate('Exemplo01')}>
           <Text style={styles.buttonText}>TextInput, States e FlatList</Text>
         </Pressable>
-      </ImageBackground>
     </View>
+  </ImageBackground>
   );
 };
 
 export default HomeScreen;
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-  },
   imageBackground: {
     flex: 1,
-    resizeMode: 'conver',
+    resizeMode: 'cover',
+  },
+  container: {
+    flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
     padding: 16,
   },
   imageTrophy: {
     width: 90,
+    height:90,
     margin: 16,
     resizeMode: 'contain',
   },
