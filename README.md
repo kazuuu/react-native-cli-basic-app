@@ -1,2 +1,2 @@
 # sample-react-native-cli-app
-Projeto para iniciantes
+Starter React Native project I created as teaching material for my mobile development course at FIAP.
